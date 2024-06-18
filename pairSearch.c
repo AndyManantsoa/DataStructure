@@ -45,7 +45,7 @@ int main(){
 
     while (e>0 && s<size-1){
         if(arr[e]+arr[s]==x){
-            printf("%d %d",arr[e],arr[s]);
+            printf("%d %d  %d %d",arr[s],arr[e],arr[e],arr[s]);
             e--;
             s++;
         }
