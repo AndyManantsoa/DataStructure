@@ -6,27 +6,27 @@ void swap(int *a,int *b){
     *b = temp;
 }
 
-void selectionSort(int arr[],int size){
-    int i,j,index;
-    for(i=0;i<size-1;i++){
-        index=i;
-        for(j=i+1;j<size;j++){
-            if(arr[j]<arr[index]){
-                index=j;
+void bubbleSort(int arr[],int size){
+    for (int i=0;i<size-1;i++){
+        for(int j=i+1;j<size-1-i;j++){
+            if(arr[j]>arr[j+1]){
+                swap(&arr[j],&arr[i]);
             }
         }
-            if(index!=i){
-                swap(&arr[index],&arr[i]);
-            }
+    }
+}
+
+void printArr(int arr[],int size){
+    for(int i=0;i<size;i++){
+        printf("%d ",arr[i]);
     }
 }
 
 int main(){
-    int arr[]={64,25,12,22,11};
-    int size= sizeof(arr)/sizeof(arr[0]);
-    selectionSort(arr,size);
-    printf("Sorted array: \n");
-    for(int i=0;i<size;i++){
-        printf("%d ",arr[i]);
-    }
+    int arr[]={5,4,3,2,1};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    printArr(arr,size);
+    bubbleSort(arr,size);
+    printf("Sorted array: ");
+    printArr(arr,size);
 }
