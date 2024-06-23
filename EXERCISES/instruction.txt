@@ -1,0 +1,5 @@
+questions:
+
+1)Pair Search: Given a sorted array arr[], sorted in ascending order having n integers.
+Find if there exist any pair of any (n,n) such that their sum is equal to x=9;
+
