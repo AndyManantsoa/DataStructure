@@ -20,6 +20,9 @@ void printArr(int arr[],int size){
 }
 
 int main(){
+
+    printf("  INSERTION SORT: \n\n");
+
     int n;
     printf("Enter the number of elements: ");
     scanf("%d", &n);

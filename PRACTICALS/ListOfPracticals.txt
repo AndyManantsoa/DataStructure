@@ -2,9 +2,9 @@
 
 2. Implement Infix to Postfix Expression Conversion using Stack
 
-3. Implement Postfix evaluation using Stack.
+3. Implement Postfix evaluation using Stack
 
-4. Implement Towers of Hanoi using Stack.
+4. Implement Towers of Hanoi using Stack
 
 5. Implement queue and its operations like enqueue, dequeue, traverse, search.
 
@@ -22,11 +22,12 @@
         b-selection sort
         c-Insertion sort
         d-quick sort
-        e-merge sort.
+        e-merge sort
+        f-radix sort
 
-10. Implement Binary search Tree and its operations ( creation, insertion, deletion).
+10. Implement Binary search Tree and its operations ( creation, insertion, deletion)
 
-11. Implement Traversals Preorder Inorder Postorder on BST.
+11. Implement Traversals Preorder Inorder Postorder on BST
 
 12. Implement Graphs and represent using adjaceny list and adjacency matrix and 
-    Implement basic operations with traversals (BFS and DFS).
+    Implement basic operations with traversals (BFS and DFS)
