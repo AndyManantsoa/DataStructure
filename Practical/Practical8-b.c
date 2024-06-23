@@ -2,7 +2,19 @@
 
 #include<stdio.h>
 
-int binarySearch(){
+int binarySearch(int arr[],int left,int right,int key){
+    int mid=left+(right-left)/2;
+    while(left<=right){
+        if(arr[mid]==key){
+            printf("Element found at index %d",mid);
+            return mid;
+        }else if(arr[mid]>key){
+            left=mid+1;
+        }else if(arr[mid]<key){
+            right=mid-1;
+        }
+    }
+    return -1;
     
 }
 
