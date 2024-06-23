@@ -1,34 +1,51 @@
-//Selection Sort
+//selection sort
 
 #include<stdio.h>
 
 void swap(int *a,int *b){
     int temp = *a;
-    *a = *b;
-    *b = temp;
+    *a=*b;
+    *b=temp;
 }
 
-void bubbleSort(int arr[],int size){
-    for (int i=0;i<size-1;i++){
-        for(int j=i+1;j<size-1-i;j++){
-            if(arr[j]>arr[j+1]){
-                swap(&arr[j],&arr[i]);
+void selectionSort(int arr[],int size){
+    for(int i=0;i<size-1;i++){
+        int index=i;
+        for(int j=1+i;j<size;j++){
+            if(arr[index]>arr[j]){
+                index=j;
+            }
+            if(index!=i){
+                swap(&arr[index],&arr[i]);
             }
         }
     }
 }
 
 void printArr(int arr[],int size){
+    printf("Your array: ");
     for(int i=0;i<size;i++){
         printf("%d ",arr[i]);
     }
 }
 
 int main(){
-    int arr[]={5,4,3,2,1};
-    int size=sizeof(arr)/sizeof(arr[0]);
-    printArr(arr,size);
-    bubbleSort(arr,size);
-    printf("Sorted array: ");
-    printArr(arr,size);
+    int n;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int arr[n];
+
+    printf("\nEnter the elements: \n");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+
+    printf("\nYour initial array: ");
+    printArr(arr,n);
+    
+    selectionSort(arr,n);
+    printf("\nYour sorted array: ");
+    printArr(arr,n);
+
 }

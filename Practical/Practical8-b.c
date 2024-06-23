@@ -35,6 +35,6 @@ int main(){
     scanf("%d", &a);
 
     binarySearch(arr,0,n-1,a);
-
+    
     return 0;
 }
