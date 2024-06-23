@@ -1,4 +1,4 @@
-1. Implement Stack and its operations like (creation push pop traverse peek search) using linear data structure
+1. Implement Stack and its operations like (CREATE, PUSH, POP, PEEK )
 
 2. Implement Infix to Postfix Expression Conversion using Stack
 
@@ -12,12 +12,21 @@
 
 7. Implement Double Linked lists and its operations(creation insertion deletion traversal search reverse)
 
-8. Implement binary search and interpolation search.
+8. Implement :
+        a-linear search
+        b-binary search
+        c-interpolation search.
 
-9. Implement Bubble sort, selection sort, Insertion sort, quick sort ,merge sort.
+9. Implement :
+        a-Bubble sort
+        b-selection sort
+        c-Insertion sort
+        d-quick sort
+        e-merge sort.
 
 10. Implement Binary search Tree and its operations ( creation, insertion, deletion).
 
 11. Implement Traversals Preorder Inorder Postorder on BST.
 
-12. Implement Graphs and represent using adjaceny list and adjacency matrix and implement basic operations with traversals (BFS and DFS).
+12. Implement Graphs and represent using adjaceny list and adjacency matrix and 
+    Implement basic operations with traversals (BFS and DFS).

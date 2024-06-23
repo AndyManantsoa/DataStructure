@@ -1,3 +1,5 @@
+//1. Implement Stack and its operations like (CREATE, PUSH, POP, PEEK )
+
 #include <stdio.h>
 #include <stdbool.h>
 
