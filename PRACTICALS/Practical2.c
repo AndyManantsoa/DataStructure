@@ -28,6 +28,9 @@ typedef struct {
 void initialize(Stack* s) {
     s->top = -1;
 }
+int isFull(Stack* s) {
+    return s->top == MAX - 1;
+}
 
 int isEmpty(Stack* s) {
     return s->top == -1;
@@ -35,7 +38,7 @@ int isEmpty(Stack* s) {
 
 
 void push(Stack* s, char value) {
-    if (s->top == MAX - 1) {
+    if (isFull(s)) {
         printf("Stack overflow\n");
         exit(1);
     } else {
@@ -57,9 +60,10 @@ char peek(Stack* s) {
         printf("Stack underflow\n");
         exit(1);
     } else {
-        return s->items[s->top];
+        return s->items[(s->top)];
     }
 }
+
 
 int isOperator(char ch) {
     return ch == '+' || ch == '-' || ch == '*' || ch == '/';
@@ -79,10 +83,10 @@ int precedence(char c) {
 void infixToPostfix(char* infix, char* postfix) {
     Stack stack;
     initialize(&stack);
-    int i, j = 0;
+    int j = 0;
     char ch;
 
-    for (i = 0; infix[i] != '\0'; i++) {
+    for (int i = 0; infix[i] != '\0'; i++) {
         ch = infix[i];
 
         if (isalnum(ch)) {
