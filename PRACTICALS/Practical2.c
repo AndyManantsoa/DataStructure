@@ -20,21 +20,21 @@ INSTRUCTIONS:
 
 #define MAX 100
 
-struct Stack {
+typedef struct {
     int top;
     char items[MAX];
-};
+}Stack;
 
-void initialize(struct Stack* s) {
+void initialize(Stack* s) {
     s->top = -1;
 }
 
-int isEmpty(struct Stack* s) {
+int isEmpty(Stack* s) {
     return s->top == -1;
 }
 
 
-void push(struct Stack* s, char value) {
+void push(Stack* s, char value) {
     if (s->top == MAX - 1) {
         printf("Stack overflow\n");
         exit(1);
@@ -43,7 +43,7 @@ void push(struct Stack* s, char value) {
     }
 }
 
-char pop(struct Stack* s) {
+char pop(Stack* s) {
     if (isEmpty(s)) {
         printf("Stack underflow\n");
         exit(1);
@@ -52,8 +52,7 @@ char pop(struct Stack* s) {
     }
 }
 
-// Peek the top element of the stack
-char peek(struct Stack* s) {
+char peek(Stack* s) {
     if (isEmpty(s)) {
         printf("Stack underflow\n");
         exit(1);
@@ -62,28 +61,23 @@ char peek(struct Stack* s) {
     }
 }
 
-// Check if the character is an operator
 int isOperator(char ch) {
     return ch == '+' || ch == '-' || ch == '*' || ch == '/';
 }
 
-// Get precedence of operators
-int precedence(char op) {
-    switch (op) {
-        case '+':
-        case '-':
-            return 1;
-        case '*':
-        case '/':
-            return 2;
-        default:
-            return 0;
-    }
+int precedence(char c) {
+    if (c == '^')
+        return 3;
+    else if (c == '/' || c == '*')
+        return 2;
+    else if (c == '+' || c == '-')
+        return 1;
+    else
+        return 0;
 }
 
-// Convert infix to postfix
 void infixToPostfix(char* infix, char* postfix) {
-    struct Stack stack;
+    Stack stack;
     initialize(&stack);
     int i, j = 0;
     char ch;
@@ -91,15 +85,12 @@ void infixToPostfix(char* infix, char* postfix) {
     for (i = 0; infix[i] != '\0'; i++) {
         ch = infix[i];
 
-        // If the character is an operand, add it to the postfix expression
         if (isalnum(ch)) {
             postfix[j++] = ch;
         }
-        // If the character is '(', push it to the stack
         else if (ch == '(') {
             push(&stack, ch);
         }
-        // If the character is ')', pop and output from the stack until '(' is found
         else if (ch == ')') {
             while (!isEmpty(&stack) && peek(&stack) != '(') {
                 postfix[j++] = pop(&stack);
@@ -108,10 +99,9 @@ void infixToPostfix(char* infix, char* postfix) {
                 printf("Invalid expression\n");
                 exit(1);
             } else {
-                pop(&stack); // Remove '(' from stack
+                pop(&stack); 
             }
         }
-        // If the character is an operator
         else if (isOperator(ch)) {
             while (!isEmpty(&stack) && precedence(peek(&stack)) >= precedence(ch)) {
                 postfix[j++] = pop(&stack);
@@ -120,12 +110,11 @@ void infixToPostfix(char* infix, char* postfix) {
         }
     }
 
-    // Pop all the operators from the stack
     while (!isEmpty(&stack)) {
         postfix[j++] = pop(&stack);
     }
 
-    postfix[j] = '\0'; // Null-terminate the postfix expression
+    postfix[j] = '\0';
 }
 
 int main() {
@@ -138,5 +127,5 @@ int main() {
 
     printf("Postfix expression: %s\n", postfix);
 
-    return 0;
+    return 0;
 }
