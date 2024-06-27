@@ -1,7 +1,6 @@
-//sStack practice: Check if notation of oppening brawcket is valid or not 
-
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 
 #define MAX 100
 
@@ -25,7 +24,7 @@ int isEmpty(Stack* s) {
 void push(Stack* s, char value) {
     if (isFull(s)) {
         printf("Stack overflow\n");
-        exit(1);
+        return;
     } else {
         s->items[++(s->top)] = value;
     }
@@ -47,4 +46,49 @@ char peek(Stack* s) {
     } else {
         return s->items[(s->top)];
     }
+}
+
+void correction(char* ch){
+    Stack s;
+    initialize(&s);
+    
+    while(*ch != '\0'){
+        if(*ch=='{'||*ch=='('||*ch=='['){
+            push(&s,*ch);
+        } else if(*ch=='}'){
+            if(peek(&s)!='{'){
+                printf("Invalid\n");
+        return;
+            }
+            pop(&s);
+        } else if(*ch==')'){
+            if(peek(&s)!='('){
+                printf("Invalid\n");
+        return;
+            }
+            pop(&s);
+        } else if(*ch==']'){
+            if(peek(&s)!='['){
+                printf("Invalid\n");
+        return;
+            }
+            pop(&s);
+        }
+        ch++;
+    }
+    if(!isEmpty(&s)){
+        printf("Invalid\n");
+    } else {
+        printf("Valid\n");
+    }
+}
+
+int main() {
+    char ch[MAX];
+
+    printf("Enter the expression: ");
+    scanf("%s", ch);
+    correction(ch);
+
+    return 0;
 }
