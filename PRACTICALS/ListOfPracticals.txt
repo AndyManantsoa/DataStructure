@@ -4,7 +4,12 @@
 
 3. Implement Postfix evaluation using Stack
 
-4. Implement Towers of Hanoi using Stack
+4. Implement recursion:
+        a- Fibonacci series
+        b- Factorial
+        c- GCD
+        D- Towers of Hanoi using Stack
+
 
 5. Implement queue and its operations like enqueue, dequeue, traverse, search.
 

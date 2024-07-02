@@ -40,7 +40,10 @@ int dequeue(Queue *s){
         return -1;
     } else{
         int item = s->values[(s->front)++];
-        if (s->front > s->rear) s->front = s->rear = -1;
+        // if (s->front > s->rear) {
+        //     s->front = s->rear = -1;
+        //     printf("Queue emptied ");
+        // }
         printf("%d dequeued from queue\n", item);
         return item;
     }
