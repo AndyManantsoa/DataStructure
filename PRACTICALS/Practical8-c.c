@@ -25,7 +25,11 @@ void printArr(int arr[],int size){
 }
 
 int interpolationSearch(int arr[],int left,int right,int key){
-    int prob = left + (key-arr[left])*(right-left)/(arr[right]-arr[left]);
+
+    int prob = left + (key-arr[left])*(right-left)
+                        /(arr[right]-arr[left]);
+
+
     printf("Element found at index %d",prob);
     return prob;
 }
@@ -45,14 +49,14 @@ int main(){
 
     for(int i=0;i<n;i++){
         scanf("%d",&arr[i]);
-    }
+    }    
 
     insertionSort(arr,n);
     printf("Sorted array: ");
 
     printArr(arr,n);
 
-    printf("Enter the element that you are searching for: ");
+    printf("\n \n Enter the element that you are searching for: ");
     scanf("%d", &a);
 
     interpolationSearch(arr,0,n-1,a);
