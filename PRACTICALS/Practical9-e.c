@@ -14,8 +14,7 @@ void merge(int arr[], int left, int middle, int right) {
     for (j = 0; j < n2; j++)
         R[j] = arr[middle + 1 + j];
 
-    i = 0;
-    j = 0;
+    i = j = 0;
     k = left;
     while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
@@ -81,7 +80,7 @@ int main(){
     printf("\nYour initial array: ");
     printArr(arr,n);
     
-    mergeSort(arr,n);
+    mergeSort(arr,0,n-1);
 
     printf("\nYour sorted array: ");
     printArr(arr,n);
