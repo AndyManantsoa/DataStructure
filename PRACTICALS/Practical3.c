@@ -71,9 +71,12 @@ int evaluatePostfix(char* postfix) {
 }
 
 int main() {
-    char postfix[] = "23+45*";
+    printf("   POSTFIX EVALUATION\n\n");
+    printf("Enter the postfix expression: ");
+    char postfix[MAX];
+    scanf("%s",&postfix);
     int result = evaluatePostfix(postfix);
-    printf("Result: %d\n", result);
+    printf("\nThe postfix result : %d\n", result);
     return 0;
 }
 
