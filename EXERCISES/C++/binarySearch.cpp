@@ -4,6 +4,7 @@ int binarySearch(int arr[],int left,int right, int x){
     while(left<=right){
         int mid = left + (right-left)/2;
         if(x==arr[mid]){
+            std::cout<<"Element fond on index: "<<mid;
             return mid;
         }else if(arr[mid]>x){
             left =mid+1;
@@ -11,6 +12,7 @@ int binarySearch(int arr[],int left,int right, int x){
             right = mid;
         }
     }
+    return -1;
 }
 
 int main(){
@@ -30,6 +32,6 @@ int main(){
     std::cout<<"Enter the elements of you want to find: ";
     std::cin>>x;
 
-    binarySearch(arr,0,n-1,x)
+    binarySearch(arr,0,n-1,x);
 };
 
