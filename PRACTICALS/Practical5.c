@@ -48,6 +48,8 @@ int dequeue(Queue *s){
     }
 }
 
+
+
 int main(){
     Queue s;
     initQueue(&s);
