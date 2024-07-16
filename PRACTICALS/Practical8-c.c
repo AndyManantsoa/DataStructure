@@ -26,12 +26,24 @@ void printArr(int arr[],int size){
 
 int interpolationSearch(int arr[],int left,int right,int key){
 
-    int prob = left + (key-arr[left])*(right-left)
-                        /(arr[right]-arr[left]);
+    while (left <=high && key <=arr[high]&& key>=arr[low]){
 
+        if(left == high){
+            if(arr[left]==key) return left;
+            return -1;
+        }
+        int prob = left + (key-arr[left])*(right-left)
+                            /(arr[right]-arr[left]);
+        
+        if(arr[prob]==key) return prob;
 
-    printf("Element found at index %d",prob);
-    return prob;
+        if(arr[prob]>key){
+            right = prob - 1;
+        } else{
+            left = prob + 1;
+        }
+    }
+    return -1;
 }
 
 
@@ -59,7 +71,13 @@ int main(){
     printf("\n \n Enter the element that you are searching for: ");
     scanf("%d", &a);
 
-    interpolationSearch(arr,0,n-1,a);
+    int x = interpolationSearch(arr,0,n-1,a);
+
+    if(x!=1){
+
+    }
+            printf("Element found at index %d",a);
+
     
     return 0;
 }
