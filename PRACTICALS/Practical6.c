@@ -19,17 +19,18 @@ Node* createNode(int data){
 //insertion:
 //at Head;
 void insertAtHead(Node ** Head, int data){
-    Node * temp = * head;
-    Node newNode = createNode(data);
-    
+    Node * temp = * Head;
+    Node *newNode = createNode(data);
+    newNode->address = temp;
+    *Head = newNode;
 }
 
 //traversing
 void traversing(Node ** Head){
     Node * temp= *Head;
-    while(s->address!=NULL){
+    while(temp->address!=NULL){
         temp = temp -> address;
-        printf("%d ", temp->Data)
+        printf("%d ", temp->Data);
     }
 }
 
