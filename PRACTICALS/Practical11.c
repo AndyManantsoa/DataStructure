@@ -1,4 +1,5 @@
 //11. Implement Traversals Preorder Inorder Postorder on BST
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,7 +9,6 @@ typedef struct Node{
     struct Node* right;
 } Node;
 
-// Function to create a new node
 Node* createNode(int data) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     if (!newNode) {
@@ -20,7 +20,6 @@ Node* createNode(int data) {
     return newNode;
 }
 
-// Function to perform Inorder traversal
 void inorderTraversal(Node* node) {
     if (node == NULL) {
         return;
@@ -30,7 +29,6 @@ void inorderTraversal(Node* node) {
     inorderTraversal(node->right);
 }
 
-// Function to perform Preorder traversal
 void preorderTraversal(Node* node) {
     if (node == NULL) {
         return;
@@ -40,7 +38,6 @@ void preorderTraversal(Node* node) {
     preorderTraversal(node->right);
 }
 
-// Function to perform Postorder traversal
 void postorderTraversal(Node* node) {
     if (node == NULL) {
         return;
@@ -50,4 +47,3 @@ void postorderTraversal(Node* node) {
     printf("%d ", node->data);
 }
 
-// Driver code
