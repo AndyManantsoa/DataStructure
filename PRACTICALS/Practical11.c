@@ -1,1 +1,53 @@
 //11. Implement Traversals Preorder Inorder Postorder on BST
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node{
+    int data;
+    struct Node* left;
+    struct Node* right;
+} Node;
+
+// Function to create a new node
+Node* createNode(int data) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    if (!newNode) {
+        printf("Memory error\n");
+        return NULL;
+    }
+    newNode->data = data;
+    newNode->left = newNode->right = NULL;
+    return newNode;
+}
+
+// Function to perform Inorder traversal
+void inorderTraversal(Node* node) {
+    if (node == NULL) {
+        return;
+    }
+    inorderTraversal(node->left);
+    printf("%d ", node->data);
+    inorderTraversal(node->right);
+}
+
+// Function to perform Preorder traversal
+void preorderTraversal(Node* node) {
+    if (node == NULL) {
+        return;
+    }
+    printf("%d ", node->data);
+    preorderTraversal(node->left);
+    preorderTraversal(node->right);
+}
+
+// Function to perform Postorder traversal
+void postorderTraversal(Node* node) {
+    if (node == NULL) {
+        return;
+    }
+    postorderTraversal(node->left);
+    postorderTraversal(node->right);
+    printf("%d ", node->data);
+}
+
+// Driver code
