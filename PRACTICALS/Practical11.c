@@ -47,3 +47,26 @@ void postorderTraversal(Node* node) {
     printf("%d ", node->data);
 }
 
+int main() {
+    Node* root = createNode(100);
+    root->left = createNode(20);
+    root->right = createNode(200);
+    root->left->left = createNode(10);
+    root->left->right = createNode(30);
+    root->right->left = createNode(150);
+    root->right->right = createNode(300);
+
+    printf("Inorder Traversal: ");
+    inorderTraversal(root);
+    printf("\n");
+
+    printf("Preorder Traversal: ");
+    preorderTraversal(root);
+    printf("\n");
+
+    printf("Postorder Traversal: ");
+    postorderTraversal(root);
+    printf("\n");
+
+    return 0;
+}
