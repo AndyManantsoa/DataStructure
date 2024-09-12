@@ -1,14 +1,14 @@
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the structure of a BST node
 struct Node {
     int data;
     struct Node* left;
     struct Node* right;
 };
 
-// Function to create a new BST node
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = newdata;
@@ -16,7 +16,6 @@ struct Node* createNode(int data) {
     return newNode;
 }
 
-// Function to insert a new node into BST
 struct Node* insert(struct Node* root, int data) {
     if (root == NULL) {
         return createNode(data);
@@ -31,7 +30,6 @@ struct Node* insert(struct Node* root, int data) {
     return root;
 }
 
-// Function to find the minimum value node in BST
 struct Node* minValueNode(struct Node* node) {
     struct Node* current = node;
     while (current && current->left != NULL) {
@@ -40,7 +38,6 @@ struct Node* minValueNode(struct Node* node) {
     return current;
 }
 
-// Function to delete a node from BST
 struct Node* deleteNode(struct Node* root, int key) {
     if (root == NULL) {
         return root;
@@ -68,7 +65,6 @@ struct Node* deleteNode(struct Node* root, int key) {
     return root;
 }
 
-// Function to perform Inorder traversal of BST
 void inorderTraversal(struct Node* root) {
     if (root != NULL) {
         inorderTraversal(root->left);
@@ -77,11 +73,9 @@ void inorderTraversal(struct Node* root) {
     }
 }
 
-// Main function
 int main() {
     struct Node* root = NULL;
 
-    // Insert elements into BST
     root = insert(root, 50);
     root = insert(root, 30);
     root = insert(root, 20);
@@ -94,7 +88,6 @@ int main() {
     inorderTraversal(root);
     printf("\n");
 
-    // Delete node with key 20
     root = deleteNode(root, 20);
     printf("Inorder Traversal after deletion of 20: ");
     inorderTraversal(root);

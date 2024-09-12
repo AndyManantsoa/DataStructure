@@ -30,7 +30,9 @@
         e-merge sort
         f-radix sort
 
-10. Implement Binary search Tree and its operations ( creation, insertion, deletion)
+10. Implement :
+        a-Binary tree and its operations
+        b-Binary search Tree and its operations ( creation, insertion, deletion)
 
 11. Implement Traversals Preorder Inorder Postorder on BST
 
