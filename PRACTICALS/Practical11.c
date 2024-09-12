@@ -20,6 +20,20 @@ Node* createNode(int data) {
     return newNode;
 }
 
+struct Node* insert(struct Node* root, int data) {
+    if (root == NULL) {
+        return createNode(data);
+    }
+
+    if (newdata < root->data) {
+        root->left = insert(root->left, data);
+    } else if (newdata > root->data) {
+        root->right = insert(root->right, data);
+    }
+
+    return root;
+}
+
 void inorderTraversal(Node* node) {
     if (node == NULL) {
         return;

@@ -12,16 +12,20 @@ Node* createNode(int data){
     Node * newNode = (Node*)malloc(sizeof(Node));
     newNode->data= data;
     newNode->left=newNode->right= NULL;
+    return newNode;
 }
 
-Node* insertNode(Node* root, int data){
+Node* insert(Node* root, int data){
     if(root==NULL){
         return createNode(data);
     }
-    if(newNode<root->data){
-        insertNode(root->left,data);
-    }else if (newNode>root->data){
-        insertNode(root->right,data);
+    if (data < root->data) {
+        root->left = insert(root->left, data);
+    } else if (data > root->data) {
+        root->right = insert(root->right, data);
+    } else {
+        // Handle duplicate data
+        std::cerr << "Duplicate data!" << std::endl;
     }
     return root;
 }
@@ -55,6 +59,6 @@ int main() {
 
     std::cout<<"Inorder Traversal before deletion: ";
     inorderTraversal(root);
-    
+
     return 0;
 }
