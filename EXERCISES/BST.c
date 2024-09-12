@@ -1,3 +1,0 @@
-// BST
-
-#include<stdio.h>
