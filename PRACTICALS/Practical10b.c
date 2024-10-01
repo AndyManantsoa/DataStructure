@@ -11,7 +11,7 @@ struct Node {
 
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    newNode->data = newdata;
+    newNode->data = data;
     newNode->left = newNode->right = NULL;
     return newNode;
 }
@@ -21,9 +21,9 @@ struct Node* insert(struct Node* root, int data) {
         return createNode(data);
     }
 
-    if (newdata < root->data) {
+    if (data < root->data) {
         root->left = insert(root->left, data);
-    } else if (newdata > root->data) {
+    } else if (data > root->data) {
         root->right = insert(root->right, data);
     }
 
