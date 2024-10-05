@@ -1,6 +1,5 @@
 //Implement queue and its operations like enqueue, dequeue, traverse, search.
 
-
 #include<stdio.h>
 
 #define MAX 100
