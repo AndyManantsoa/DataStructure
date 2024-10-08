@@ -28,11 +28,11 @@ void enqueue(Queue *s, int value){
         return;
     } else{
         if(s->front == -1) s->front =0;
-        s->rear = ++(s->rear);
-        s->values[s->rear] = value;
+        s->values[++(s->rear)] = value;
         printf("%d is enqueued to the queue\n",value);
     }
 }
+
 int dequeue(Queue *s){
     if(isEmpty(s)){
         printf("Queue is empty\n");
