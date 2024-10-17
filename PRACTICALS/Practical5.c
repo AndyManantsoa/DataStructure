@@ -47,6 +47,17 @@ int dequeue(Queue *s){
     }
 }
 
+int peek(Queue *s){
+    if(isEmpty(s)){
+        printf("Queue is empty\n");
+        return -1;
+    } else{
+        int item = s->values[(s->front)];
+        printf("%d peeked from queue\n", item);
+        return item;
+    }
+}
+
 
 
 int main(){
@@ -56,7 +67,8 @@ int main(){
     enqueue(&s, 1);
     enqueue(&s, 2);
     enqueue(&s, 3);
-    
+    \
+    ]
     printf("\n");
 
     dequeue(&s);

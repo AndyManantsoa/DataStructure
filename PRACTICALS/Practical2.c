@@ -99,7 +99,7 @@ void infixToPostfix(char* infix, char* postfix) {
             while (!isEmpty(&stack) && peek(&stack) != '(') {
                 postfix[j++] = pop(&stack);
             }
-            if (!isEmpty(&stack) && peek(&stack) != '(') {
+            if (!isEmpty(&stack) && peek(&stack) = '(') {
                 printf("Invalid expression\n");
                 exit(1);
             } else {
