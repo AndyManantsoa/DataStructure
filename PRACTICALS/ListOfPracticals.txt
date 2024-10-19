@@ -8,7 +8,7 @@
         a- Fibonacci series
         b- Factorial
         c- GCD
-        D- Towers of Hanoi using Stack
+        D- Towers of Hanoi 
 
 
 5. Implement queue and its operations like enqueue, dequeue, traverse, search.
