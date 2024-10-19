@@ -3,14 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the structure for a node in the doubly linked list
 struct Node {
     int data;
     struct Node* prev;
     struct Node* next;
 };
 
-// Function to create a new node
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
@@ -19,7 +17,6 @@ struct Node* createNode(int data) {
     return newNode;
 }
 
-// Function to insert a node at the beginning of the list
 void insertAtBeginning(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
     newNode->next = *head;
@@ -29,7 +26,6 @@ void insertAtBeginning(struct Node** head, int data) {
     *head = newNode;
 }
 
-// Function to insert a node at the end of the list
 void insertAtEnd(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
     if (*head == NULL) {
@@ -44,7 +40,6 @@ void insertAtEnd(struct Node** head, int data) {
     newNode->prev = temp;
 }
 
-// Function to delete a node with a given key
 void deleteNode(struct Node** head, int key) {
     if (*head == NULL) return;
 
@@ -77,7 +72,6 @@ void deleteNode(struct Node** head, int key) {
     free(temp);
 }
 
-// Function to traverse and print the list
 void traverseList(struct Node* head) {
     struct Node* temp = head;
     printf("List: ");
@@ -88,7 +82,6 @@ void traverseList(struct Node* head) {
     printf("\n");
 }
 
-// Function to search for a key in the list
 struct Node* searchNode(struct Node* head, int key) {
     struct Node* temp = head;
     while (temp != NULL) {
@@ -100,7 +93,6 @@ struct Node* searchNode(struct Node* head, int key) {
     return NULL;
 }
 
-// Function to reverse the list
 void reverseList(struct Node** head) {
     struct Node* temp = NULL;
     struct Node* current = *head;
@@ -117,7 +109,6 @@ void reverseList(struct Node** head) {
     }
 }
 
-// Main function to test the doubly linked list operations
 int main() {
     struct Node* head = NULL;
 
