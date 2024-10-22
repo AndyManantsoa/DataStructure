@@ -25,9 +25,9 @@ struct Node* insert(struct Node* root, int data) {
         return createNode(data);
     }
 
-    if (newdata < root->data) {
+    if (data < root->data) {
         root->left = insert(root->left, data);
-    } else if (newdata > root->data) {
+    } else if (data > root->data) {
         root->right = insert(root->right, data);
     }
 
@@ -63,19 +63,19 @@ void postorderTraversal(Node* node) {
 
 int main() {
     Node* root = createNode(100);
-    root->left = createNode(20);
-    root->right = createNode(200);
-    root->left->left = createNode(10);
-    root->left->right = createNode(30);
-    root->right->left = createNode(150);
-    root->right->right = createNode(300);
+    insert(root,10);
+    insert(root,20);
+    insert(root,30);
+    insert(root,150);
+    insert(root,200);
+    insert(root,300);
+    
+    printf("Preorder Traversal: ");
+    preorderTraversal(root);
+    printf("\n");
 
     printf("Inorder Traversal: ");
     inorderTraversal(root);
-    printf("\n");
-
-    printf("Preorder Traversal: ");
-    preorderTraversal(root);
     printf("\n");
 
     printf("Postorder Traversal: ");
