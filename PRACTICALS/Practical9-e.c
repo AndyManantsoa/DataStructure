@@ -65,6 +65,7 @@ void printArr(int arr[],int size){
     }
 }
 
+
 int main(){
 
     printf("  MERGE SORT: \n\n");
