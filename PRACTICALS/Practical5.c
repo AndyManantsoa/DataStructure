@@ -67,8 +67,6 @@ int main(){
     enqueue(&s, 1);
     enqueue(&s, 2);
     enqueue(&s, 3);
-    \
-    ]
     printf("\n");
 
     dequeue(&s);

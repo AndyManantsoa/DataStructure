@@ -3,6 +3,7 @@
 #include<stdio.h>
 
 void merge(int arr[], int left, int middle, int right) {
+    
     int i, j, k;
     int n1 = middle - left + 1;
     int n2 = right - middle;
@@ -39,6 +40,7 @@ void merge(int arr[], int left, int middle, int right) {
         k++;
     }
 }
+
 
 void mergeSort(int arr[], int left, int right) {
     if (left < right) {
