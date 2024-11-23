@@ -45,7 +45,6 @@ void deleteNode(struct Node** head, int key) {
 
     struct Node* temp = *head;
     
-    // If the head node itself holds the key to be deleted
     if (temp->data == key) {
         *head = temp->next;
         if (*head != NULL) {
@@ -55,15 +54,13 @@ void deleteNode(struct Node** head, int key) {
         return;
     }
 
-    // Search for the key to be deleted
     while (temp != NULL && temp->data != key) {
         temp = temp->next;
     }
 
-    // If key was not present in linked list
     if (temp == NULL) return;
 
-    // Unlink the node from linked list
+t
     temp->prev->next = temp->next;
     if (temp->next != NULL) {
         temp->next->prev = temp->prev;

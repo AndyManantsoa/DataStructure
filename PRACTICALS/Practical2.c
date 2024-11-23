@@ -1,18 +1,5 @@
 //2. Implement Infix to Postfix Expression Conversion using Stack
 
-/*
-INSTRUCTIONS:
-
-1) create char stack of top size and top; with its operations;
-2) create funtion of BODMAS priority that returns in integers the order  ( 0 for "(", 1 fo + or -, 2 for * r /) else 0;
-3) create the function infixtopostfix of char *infix ,*postfix:
-    while char e is not full
-        if alpha numeric then push to postfix
-        else if ( then push e
-        else if ) then push e and while
-    
-
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -92,6 +79,9 @@ void infixToPostfix(char* infix, char* postfix) {
         if (isalnum(ch)) {
             postfix[j++] = ch;
         }
+        else if (isspace(ch)) {
+            continue;
+        }
         else if (ch == '(') {
             push(&stack, ch);
         }
@@ -99,11 +89,11 @@ void infixToPostfix(char* infix, char* postfix) {
             while (!isEmpty(&stack) && peek(&stack) != '(') {
                 postfix[j++] = pop(&stack);
             }
-            if (!isEmpty(&stack) && peek(&stack) = '(') {
+            if (!isEmpty(&stack) && peek(&stack) == '(') {
+                pop(&stack); 
+            } else {
                 printf("Invalid expression\n");
                 exit(1);
-            } else {
-                pop(&stack); 
             }
         }
         else if (isOperator(ch)) {

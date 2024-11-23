@@ -9,6 +9,7 @@ void towerOfHanoi(int n, char Src, char Aux, char Dest) {
     }
     if (n == 1) {
         printf("Disk 1 moved from %c to %c\n", Src, Dest);
+        return;
     }
 
     towerOfHanoi(n - 1, Src, Dest, Aux);
